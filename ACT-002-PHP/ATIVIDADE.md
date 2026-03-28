@@ -214,3 +214,40 @@ Mas não é ideal, pois
 Nesse caso, não é errado usar session, mas é desnecessário.
 
 ---
+
+## Exercício 3 — Pergunta de investigação
+
+Crie um arquivo chamado `teste.php` com o seguinte código:
+
+```php
+setcookie("contador", "1", time()+3600);
+
+if(isset($_COOKIE["contador"])) {
+    echo "Valor do cookie: " . $_COOKIE["contador"];
+} else {
+    echo "Cookie ainda não disponível.";
+}
+
+?>
+```
+Agora realize os seguintes passos:
+
+1. Execute o arquivo no navegador.
+2. Atualize a página.
+3. Abra as ferramentas do navegador e visualize os cookies.
+4. Limpe os cookies do site e atualize novamente.
+
+Descreva:
+
+- o que aconteceu em cada etapa
+- por que o cookie não aparece imediatamente na primeira execução.
+
+<br>
+
+## Respostas:
+
+<!-- 
+colocar resposta aqui no lugar desse comentário, usando a caixinha de código igual do jeito que tá acima ( ```)
+-->
+
+---
