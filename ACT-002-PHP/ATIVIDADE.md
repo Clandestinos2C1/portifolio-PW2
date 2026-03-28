@@ -84,6 +84,7 @@ Justifique suas escolhas.
 
 ## Resposta:
 
+## A) Manter o usuário logado
 ### ❌ Cookies
 Seria possível manter o usuário logado apenas com cookies, por exemplo:
 
@@ -136,3 +137,38 @@ Se uma pessoa má intencionada conseguir roubar o cookie (ex: via XXS ou rede in
   - Expiração de sessão
   - Regeneração de ID
 
+<br>
+## B) Armazenar itens temporários no carrinho
+
+### ❌ Cookies (possível, mas pouco confiável)
+
+Um cookie com carrinho ficaria mais ou menos da seguinte maneira:
+
+`[{"id":1, "qtd":5},{"id": 4, "qtd":9}]`
+
+Nesse caso, o próprio navegador tem que enviar esses dados a cada requisição
+
+### ⚠️ Problemas:
+
+- O usuário pode facilmente alterar o conteúdo
+  - Alterar quantidade (imagine o usuário colocando 9999 unidades no carrinho, ia comprometer o sistema ao enviar o cookie)  
+
+- Os dados ficam mais expostos
+- Existe limite de tamanho (~4KB)
+<br>
+
+### ✔️ Session
+
+Os itens do carrinho ficam armazenados no servidor:
+
+```php
+$_SESSION['carrinho'] = [
+  ["id" => 1, "qtd" => 2],
+  ["id" => 5, "qtd" => 1]
+];
+```
+O navegador nesse caso mantém apenas o ID da sessão (que vai puxar o conteúdo do carrinho também)
+
+### Conclusão:
+
+Assim como no caso anterior, nesse caso ainda é mais seguro usar session, mas não elimina riscos.
