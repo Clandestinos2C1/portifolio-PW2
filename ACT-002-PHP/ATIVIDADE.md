@@ -244,10 +244,24 @@ Descreva:
 
 <br>
 
-## Respostas:
+## Resposta:
 
 <!-- 
 colocar resposta aqui no lugar desse comentário, usando a caixinha de código igual do jeito que tá acima ( ```)
 -->
 
 ---
+
+## Exercício 4 — Pergunta de reflexão
+
+Por que **sessions são geralmente preferidas para autenticação de usuários** em sistemas web?
+
+Discuta:
+
+- segurança
+- manipulação de dados
+- possíveis riscos ao utilizar apenas cookies.
+
+## Resposta:
+
+<!-- colocar a resposta aqui -->
