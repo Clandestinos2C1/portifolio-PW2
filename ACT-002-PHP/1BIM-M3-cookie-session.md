@@ -278,4 +278,19 @@ Discuta:
 
 ## Resposta:
 
-<!-- colocar a resposta aqui -->
+As *sessions* são geralmente preferidas para autenticação de usuários em sistemas web por oferecerem maior segurança e controle no gerenciamento dos dados.
+
+### Segurança
+As sessions armazenam as informações no servidor, não no navegador do usuário. Isso reduz o risco de manipulação ou roubo de dados sensíveis, como informações de login. Já os cookies ficam armazenados no cliente e podem ser acessados ou alterados com mais facilidade, especialmente se não estiverem bem protegidos.
+
+### Manipulação de dados
+Com sessions, o servidor mantém controle total sobre os dados do usuário. Isso permite invalidar sessões facilmente (por exemplo, ao fazer logout) e gerenciar o estado da autenticação de forma mais confiável. Nos cookies, como os dados ficam no navegador, há maior risco de alterações indevidas.
+
+### Riscos ao utilizar apenas cookies
+- Podem ser roubados por ataques como *XSS* (Cross-Site Scripting)
+- Podem ser modificados pelo próprio usuário
+- Se não forem criptografados, expõem dados sensíveis
+- Dependem da segurança do navegador e do dispositivo do usuário
+
+### ✔️ Conclusão
+Sessions são mais seguras para autenticação porque mantêm os dados críticos no servidor, reduzindo a exposição e o risco de ataques. Cookies ainda são úteis, mas geralmente devem ser usados em conjunto com sessions (por exemplo, armazenando apenas um identificador de sessão).
